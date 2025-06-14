@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>QR Movie Generator</title>
+    <script>
+      setTimeout(() => location.reload(), 10000);
+    </script>
+  </head>
+  <body>
+    <h1>Scan this QR to view 10 movies</h1>
+    <img src="<%= qrCode %>" alt="QR Code">
+    <p>Or visit: <a href="<%= link %>"><%= link %></a></p>
+  </body>
+</html>

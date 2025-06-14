@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Movie List</title>
+    <style>
+      ul {
+        list-style-type: none;
+        padding: 0px;
+      }
+      h1 {
+        text-align: left;
+        color: #d23b3b;
+      }
+      li {
+        margin-bottom: 2px;
+      }
+      img {
+        width: 150px;
+        border-radius: 8px;
+        margin-top: 2px;
+        margin-bottom: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Your 10 Movies</h1>
+    <ul>
+      <% movies.forEach(movie => { %>
+        <li><%= movie.Title %></li>
+        <img src="<%= movie.image %>" alt="<%= movie.Title %>"/>
+      </li>
+      <% }); %>
+    </ul>
+  </body>
+</html>
