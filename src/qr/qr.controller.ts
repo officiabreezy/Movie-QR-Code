@@ -3,6 +3,7 @@ import { QrService } from './qr.service';
 import * as QRCode from 'qrcode';
 import { Request } from 'express';
 import { Movie } from './qr.service'; // Assuming Movie interface is defined in qr.service.ts
+import { NotFoundException } from '@nestjs/common';
 
 @Controller()
 export class QrController {
@@ -22,8 +23,8 @@ export class QrController {
   @Render('movies')
   getMovies(@Param('id') id: string) : { movies: Movie[] } {
     const movies = this.qrService.getMoviesById(id);
-    if (!movies) throw new Error('Invalid or expired link');
+    if (!movies) throw new NotFoundException('Invalid or expired link');
 
-    return { movies };
+     return { movies };
   }
 }
